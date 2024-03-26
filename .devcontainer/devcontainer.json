@@ -15,17 +15,17 @@
             "installOhMyZsh": false,
             "installOhMyZshConfig": false,
             "upgradePackages": false,
-            "username": "pbi",
+            "username": "testuser",
             "nonFreePackages": false
         },
         "ghcr.io/devcontainers/features/sshd:1": {}
     },
-    "remoteUser": "test",
-    "containerUser": "test",
-    "workspaceFolder": "/workspaces/test",
+    "remoteUser": "testuser",
+    "containerUser": "testuser",
+    "workspaceFolder": "/workspaces/testuser",
     "remoteEnv": {
-        "USERNAME": "test",
-        "USER_NPMRC_PATH": "/home/pbi/.npmrc"
+        "USERNAME": "testuser",
+        "USER_NPMRC_PATH": "/home/testuser/.npmrc"
     },
     "secrets": {
     },
@@ -37,18 +37,6 @@
             "openFiles": []
         },
         "vscode": {
-            "extensions": [
-                "ms-codespaces-tools.ado-codespaces-auth", // Azure Artifacts Credential Helper
-                "Angular.ng-template", // Angular Language Service
-                "streetsidesoftware.code-spell-checker", // Code Spell Checker
-                "EditorConfig.EditorConfig", // EditorConfig for VS Code
-                "dbaeumer.vscode-eslint", // ESLint
-                "GitHub.copilot", // GitHub Copilot
-                "eamodio.gitlens",  // GitLens — Git supercharged
-                "davidanson.vscode-markdownlint", // Markdownlint
-                "nrwl.angular-console", // Nx Console
-                "ms-playwright.playwright" // Playwright Test for VSCode
-            ],
             "settings": {
                 "extensions.ignoreRecommendations": true,
                 "github.codespaces.usePortForwardingServiceForHTTPS": false,
