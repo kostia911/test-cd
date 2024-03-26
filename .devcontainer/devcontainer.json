@@ -1,0 +1,84 @@
+{
+    // https://containers.dev/implementors/json_reference
+    "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+    "name": "test Codespaces",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "hostRequirements": {
+        "cpus": 4,
+        "storage": "6gb"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": false,
+            "installOhMyZsh": false,
+            "installOhMyZshConfig": false,
+            "upgradePackages": false,
+            "username": "pbi",
+            "nonFreePackages": false
+        },
+        "ghcr.io/devcontainers/features/sshd:1": {}
+    },
+    "remoteUser": "test",
+    "containerUser": "test",
+    "workspaceFolder": "/workspaces/test",
+    "remoteEnv": {
+        "USERNAME": "test",
+        "USER_NPMRC_PATH": "/home/pbi/.npmrc"
+    },
+    "secrets": {
+    },
+    "initializeCommand": "mkdir -p ${localWorkspaceFolder}/../pbi",
+    "onCreateCommand": "",
+    "postStartCommand": "",
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "extensions": [
+                "ms-codespaces-tools.ado-codespaces-auth", // Azure Artifacts Credential Helper
+                "Angular.ng-template", // Angular Language Service
+                "streetsidesoftware.code-spell-checker", // Code Spell Checker
+                "EditorConfig.EditorConfig", // EditorConfig for VS Code
+                "dbaeumer.vscode-eslint", // ESLint
+                "GitHub.copilot", // GitHub Copilot
+                "eamodio.gitlens",  // GitLens — Git supercharged
+                "davidanson.vscode-markdownlint", // Markdownlint
+                "nrwl.angular-console", // Nx Console
+                "ms-playwright.playwright" // Playwright Test for VSCode
+            ],
+            "settings": {
+                "extensions.ignoreRecommendations": true,
+                "github.codespaces.usePortForwardingServiceForHTTPS": false,
+                "gitlens.showWelcomeOnInstall": false,
+                "gitlens.showWhatsNewAfterUpgrades": false,
+                "nxConsole.showNodeVersionOnStartup": false,
+                "typescript.tsserver.maxTsServerMemory": 8192,
+                "typescript.tsserver.nodePath": "/usr/local/bin/node"
+            }
+        }
+    },
+    "forwardPorts": [
+        443,
+        2222,
+        9876
+    ],
+    "portsAttributes": {
+        "443": {
+            "label": "HTTPS",
+            "onAutoForward": "notify",
+            "requireLocalPort": true,
+            "elevateIfNeeded": true
+        },
+        "2222": {
+            "label": "SSH",
+            "onAutoForward": "silent"
+        },
+        "9876": {
+            "label": "Karma",
+            "onAutoForward": "notify"
+        }
+    }
+}
